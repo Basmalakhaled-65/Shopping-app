@@ -1,0 +1,6 @@
+Add these under dependencies in pubspec.yaml:
+
+  http: ^1.2.2
+  shared_preferences: ^2.3.2
+
+Then run: flutter pub get

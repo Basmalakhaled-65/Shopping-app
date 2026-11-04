@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseURL}}/user/deleteCart"
+method: DELETE
+body:
+  type: json
+  content: "{\r\n    \"productId\":\"\"\r\n}"
+order: 3000

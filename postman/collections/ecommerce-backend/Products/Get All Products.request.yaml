@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseURL}}/home/products?skip=0&limit=10"
+method: GET
+queryParams:
+  - key: skip
+    value: "0"
+    description: Number of items to skip
+  - key: limit
+    value: "10"
+    description: Number of items to return
+  - key: sortBy
+    value: title
+    disabled: true
+    description: Field to sort by
+  - key: order
+    value: asc
+    disabled: true
+    description: Sort order (asc/desc)
+  - key: select
+    value: title,price
+    disabled: true
+    description: Comma-separated fields to select
+order: 1000

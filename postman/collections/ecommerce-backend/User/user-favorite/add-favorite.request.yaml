@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseURL}}/user/addFavorite"
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"productId\":\"1\"\r\n}"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 2000

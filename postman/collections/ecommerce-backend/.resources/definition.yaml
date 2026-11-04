@@ -1,0 +1,12 @@
+$kind: collection
+description: ""
+variables:
+  - key: baseURL
+    value: http://localhost:5000/api/v1
+    disabled: false
+  - key: ""
+    value: ""
+    disabled: false
+  - key: json_web_token_0eq5
+    secret: true
+    disabled: false

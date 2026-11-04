@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseURL}}/portfoilo/addImage"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: file
+      src:
+        - /C:/Users/MohNasr/Downloads/Colorful Modern Infinity Technology Free Logo (1).png
+order: 2000

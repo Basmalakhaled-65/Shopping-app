@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseURL}}/auth/signUp"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"\",\r
+
+    \    \"phone\":\"\",\r
+
+    \    \"email\":\"\",\r
+
+    \    \"password\":\"\",\r
+
+    \    \"confirmPassword\":\"\"\r
+
+    }"
+order: 1000

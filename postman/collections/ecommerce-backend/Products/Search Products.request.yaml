@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseURL}}/home/productsFilter"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "search": "laptop",
+      "skip": 0,
+      "limit": 5
+    }
+order: 3000

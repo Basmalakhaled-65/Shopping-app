@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseURL}}/home/products/category/smartphones?skip=0&limit=5"
+method: GET
+queryParams:
+  skip: "0"
+  limit: "5"
+order: 4000

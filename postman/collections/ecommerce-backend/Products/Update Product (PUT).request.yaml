@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseURL}}/home/products/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "iPhone Galaxy +1",
+      "price": 1299.99,
+      "description": "Updated description for the product"
+    }
+order: 7000

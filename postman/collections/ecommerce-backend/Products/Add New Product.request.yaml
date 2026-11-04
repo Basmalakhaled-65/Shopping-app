@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{baseURL}}/home/products"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "BMW Pencil",
+      "description": "A premium pencil with BMW branding",
+      "price": 29.99,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "stock": 50,
+      "brand": "BMW",
+      "category": "stationary",
+      "thumbnail": "https://example.com/image.jpg"
+    }
+order: 6000

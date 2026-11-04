@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseURL}}/home/products/brand/Essence?skip=0&limit=5"
+method: GET
+queryParams:
+  skip: "0"
+  limit: "5"
+order: 5000

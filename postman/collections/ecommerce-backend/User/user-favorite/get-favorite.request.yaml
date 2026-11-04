@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseURL}}/user/getFavorite"
+method: GET
+queryParams:
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: ""
+settings: {}
+order: 1000

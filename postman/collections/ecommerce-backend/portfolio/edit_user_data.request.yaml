@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseURL}}/portfoilo/editUserData"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"\",\r
+
+    \  \"image\": \"\",\r
+
+    \  \"address\": \"\",\r
+
+    \  \"phone\": \"\"\r
+
+    }"
+order: 3000

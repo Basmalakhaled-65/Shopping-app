@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{baseURL}}/home/categories/names"
+method: GET
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: ""
+settings: {}
+order: 2000

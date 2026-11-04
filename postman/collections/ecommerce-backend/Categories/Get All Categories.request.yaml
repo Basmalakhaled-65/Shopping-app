@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseURL}}/home/categories"
+method: GET
+body:
+  type: json
+  content: ""
+settings: {}
+order: 1000

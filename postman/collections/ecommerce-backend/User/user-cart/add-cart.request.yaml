@@ -1,0 +1,11 @@
+$kind: http-request
+url: https://supermarket-dan1.onrender.com/api/v1/user/addCart
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"productId\":\"1\"\r\n}"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0eq5}}"
+order: 2000
