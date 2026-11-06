@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/product.dart';
-import '../services/product_service.dart';
-import '../services/api_service.dart';
+import '../presentation/facades/product_service.dart';
+import '../core/network/api_client.dart';
 import '../widgets/product_card.dart';
 import '../widgets/shop_bottom_nav.dart';
 
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (context, snap) {
                 if (snap.hasError) {
                   return Center(
-                    child: Text(ApiService.errorMessage(snap.error!)),
+                    child: Text(ApiClient.errorMessage(snap.error!)),
                   );
                 }
 
@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               if (snap.hasError) {
                 return Center(
-                  child: Text(ApiService.errorMessage(snap.error!)),
+                  child: Text(ApiClient.errorMessage(snap.error!)),
                 );
               }
 

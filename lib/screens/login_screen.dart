@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../services/auth_service.dart';
-import '../services/api_service.dart';
-import '../widgets/app_button.dart';
+import '../presentation/facades/auth_service.dart';
+import '../core/network/api_client.dart';
 import '../widgets/app_text_field.dart';
 
 class LoginScreen extends StatefulWidget { const LoginScreen({super.key}); @override State<LoginScreen> createState() => _LoginScreenState(); }
@@ -12,7 +11,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (email.text.trim().isEmpty || password.text.isEmpty) { _message('Enter email and password'); return; }
     setState(() => loading = true);
     try { await AuthService.signIn(email: email.text.trim(), password: password.text); if (!mounted) return; Navigator.pushNamedAndRemoveUntil(context, '/home', (_) => false); }
-    catch (e) { _message(ApiService.errorMessage(e)); }
+    catch (e) { _message(ApiClient.errorMessage(e)); }
     finally { if (mounted) setState(() => loading = false); }
   }
   void _message(String text) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));

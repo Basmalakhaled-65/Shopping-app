@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import '../services/auth_service.dart';
-import '../services/api_service.dart';
+import '../presentation/facades/auth_service.dart';
+import '../core/network/api_client.dart';
 import '../widgets/app_button.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -44,7 +44,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
       Navigator.pushNamed(context, '/reset');
     } catch (e) {
-      _msg(ApiService.errorMessage(e));
+      _msg(ApiClient.errorMessage(e));
     } finally {
       if (mounted) {
         setState(() => loading = false);

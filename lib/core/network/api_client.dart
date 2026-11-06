@@ -1,11 +1,12 @@
+import 'dart:developer' as developer;
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../core/local_storage/token_storage.dart';
-import '../core/network/api_constants.dart';
+import '../local_storage/token_storage.dart';
+import 'api_constants.dart';
 
-class ApiService {
+class ApiClient {
   static Uri _uri(String path, [Map<String, String>? query]) {
     final baseUrl = ApiConstants.baseUrl.replaceAll(RegExp(r'/+$'), '');
     final cleanPath = path.replaceAll(RegExp(r'^/+'), '');
@@ -67,12 +68,12 @@ class ApiService {
   static Future<dynamic> get(String path, {Map<String, String>? query}) async {
     final uri = _uri(path, query);
 
-    print('GET REQUEST URL: $uri');
+    developer.log('GET REQUEST URL: $uri');
 
     final response = await http.get(uri, headers: await _headers());
 
-    print('GET STATUS CODE: ${response.statusCode}');
-    print('GET RESPONSE: ${response.body}');
+    developer.log('GET STATUS CODE: ${response.statusCode}');
+    developer.log('GET RESPONSE: ${response.body}');
 
     return _decode(response);
   }
@@ -80,7 +81,7 @@ class ApiService {
   static Future<dynamic> post(String path, {Map<String, dynamic>? body}) async {
     final uri = _uri(path);
 
-    print('POST REQUEST URL: $uri');
+    developer.log('POST REQUEST URL: $uri');
 
     final response = await http.post(
       uri,
@@ -88,8 +89,8 @@ class ApiService {
       body: jsonEncode(body ?? {}),
     );
 
-    print('POST STATUS CODE: ${response.statusCode}');
-    print('POST RESPONSE: ${response.body}');
+    developer.log('POST STATUS CODE: ${response.statusCode}');
+    developer.log('POST RESPONSE: ${response.body}');
 
     return _decode(response);
   }
@@ -100,7 +101,7 @@ class ApiService {
   }) async {
     final uri = _uri(path);
 
-    print('DELETE REQUEST URL: $uri');
+    developer.log('DELETE REQUEST URL: $uri');
 
     final response = await http.delete(
       uri,
@@ -108,8 +109,8 @@ class ApiService {
       body: jsonEncode(body ?? {}),
     );
 
-    print('DELETE STATUS CODE: ${response.statusCode}');
-    print('DELETE RESPONSE: ${response.body}');
+    developer.log('DELETE STATUS CODE: ${response.statusCode}');
+    developer.log('DELETE RESPONSE: ${response.body}');
 
     return _decode(response);
   }
